@@ -175,6 +175,12 @@ Based on the evaluation results, the Polynomial (degree 2) SVM emerges as the mo
 The ETL (Extract, Transform, Load) pipeline is indispensable in the classification process as it acts as the backbone for preparing data before feeding it into models. By ensuring data quality through cleaning and normalization, extracting relevant features, and optimizing data flow, the ETL pipeline significantly impacts the accuracy and efficiency of classification algorithms. It not only enhances model performance by improving data consistency and feature relevance but also fosters scalability, reproducibility, and compliance with data governance standards, underscoring its crucial role in turning raw data into actionable insights for effective classification tasks.
 
 ## Storing Trained Model and Vectorizer
+```python
+import pickle
+
+iasria_vect=pickle.dump(vectorizer,open("iasria_vect.pickle",'wb'))
+iasria_model=pickle.dump(neural,open("iasria_model.pickle",'wb'))
+```
 To facilitate model reuse and deployment, the provided Python code snippet utilizes the pickle module to serialize and save the trained vectorizer and neural network model objects to disk. This approach enables you to store these objects in a persistent format, allowing for quick loading without the need for retraining or recreating the vectorizer from scratch. By saving these objects using pickle, you ensure easy sharing and distribution of the trained model and vectorizer, promoting collaboration and reproducibility in machine learning projects. The serialized objects are stored in files named iasria_vect.pickle for the vectorizer and iasria_model.pickle for the neural network model.
 
 For detailed implementation and code, refer to the `sentiment_classification.ipynb` file.
